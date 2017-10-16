@@ -3,7 +3,7 @@
 This project contains the implementations of the [tasks](https://olat.vcrp.de/auth/RepositoryEntry/1676804160/CourseNode/96508359362599) for a computer science class at TH Bingen.
 
 
-## authors
+## Authors
 
 The team members are:
 
@@ -18,4 +18,10 @@ The team members are:
 
 Our responsible person and lecture is [Nicolai Parlog](https://github.com/nicolaiparlog).
 
+
+## License & copyright
+
+Licensed under the [MIT License](LICENSE)
+
+copyright: THBingen Github organization
 
