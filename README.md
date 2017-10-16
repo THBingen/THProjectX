@@ -35,5 +35,5 @@ copyright: THBingen Github
 
 ## Code of Conduct
 
-Der [Verhaltenskodex](Code of Conduct) für Open-Source-Communities wird beachtet und respektiert
+Der [Verhaltenskodex](CodeOfConduct) für Open-Source-Communities wird beachtet und respektiert.
 
