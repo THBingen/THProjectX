@@ -23,7 +23,7 @@ Die Vorlesung des Kurses und Moderation/Überwachung der Ausführung führt [Nic
 
 Der Code wird in Englisch verfasst. Die Konversationen auf Github sowie die Kommentare im Code werden in Deutsch geschrieben.
 
-English: The code is written in english. Conversations on github an comments (code) are written in german.
+English: The code is written in English. Conversations on Github and Comments (code) are written in German.
 
  
 
