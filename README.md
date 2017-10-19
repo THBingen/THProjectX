@@ -39,5 +39,5 @@ Der [Verhaltenskodex](CodeOfConduct) für Open-Source-Communities wird beachtet 
 
 ## Wichtige Hinweise
 
-Mergen: Auf dem Masterbranch nur nach Freigabe durch Betreuer Nikolai Parlog!
+Mergen: Auf dem Masterbranch nur nach Freigabe durch Betreuer Nicolai Parlog!
 
