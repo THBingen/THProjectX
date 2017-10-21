@@ -37,3 +37,7 @@ copyright: THBingen Github
 
 Der [Verhaltenskodex](CodeOfConduct) für Open-Source-Communities wird beachtet und respektiert.
 
+## Wichtige Hinweise
+
+Mergen: Auf dem Masterbranch nur nach Freigabe durch Betreuer Nicolai Parlog!
+
