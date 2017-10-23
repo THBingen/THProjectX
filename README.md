@@ -51,7 +51,7 @@ Die `.jar` wird dann durch den Buidltool Maven aus dem Kotlin Code der vorliegen
 auch für Personen nutzbar, die nicht über Kotlin verfügen. 
 
 
-Folgende Schritte sind nach dem herunterladen durchzuführen:
+Folgende Schritte sind nach dem Herunterladen durchzuführen:
 
 1. In Windows Powershell navigieren Sie über den Befehl `cd "DateiPfad"` hin zu Ihrer heruntergeladenen `pom.xml` Datei.     
 
@@ -60,4 +60,6 @@ Als Beispiel (wenn sich die `pom.xml` in THProjectX befinden würde): `cd D:\Inf
 2. Anschließend führen Sie in der Kommandozeile den Befehl `mvn clean install` aus um die Kotlin Datei über das Buildtool Maven zu kompilieren.
 
 3. Nun wird ein ein neuer Ordner "Target" erstellt worden sein, der die `.jar` Datei enthält.
-In dem vorliegendem Beispiel heist diese Datei `THBingen-1.0-SNAPSHOT.jar`
+In dem vorliegendem Beispiel heißt diese Datei `THBingen-1.0-SNAPSHOT.jar`
+
+4. Begeben Sie sich in den "Target"-Ordner und geben folgenden Befehl ein:  `java -jar THBingen-1.0-SNAPSHOT-jar-with-dependencies.jar`
