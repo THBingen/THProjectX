@@ -43,23 +43,7 @@ Mergen: Auf dem Masterbranch nur nach Freigabe durch Betreuer Nicolai Parlog!
 
 ## Ausführen der Applikation
 
-Bevor die Applikation ausgeführt werden kann muss sich zuerst eine lauffähige Maven-Version auf dem PC befinden. 
-Eine Anleitung zur Installation finden Sie [hier](https://maven.apache.org/install.html).
+Laden Sie sich die Datei in "Release" herunter. Um die Anwendung zu starten öffnen Sie Ihr PowerShell und begeben sich in den Ordner, in dem die `jar-file` enthalten ist.
+Nun geben Sie folgenden Befehl ein:
 
-Wenn Maven eingerichtet ist, kann die Source Datei aus der neuesten Version des Realeses heruntergeladen werden.
-Die `.jar` wird dann durch den Buidltool Maven aus dem Kotlin Code der vorliegenden Version kompiliert und erst daduch
-auch für Personen nutzbar, die nicht über Kotlin verfügen. 
-
-
-Folgende Schritte sind nach dem Herunterladen durchzuführen:
-
-1. In Windows Powershell navigieren Sie über den Befehl `cd "DateiPfad"` hin zu Ihrer heruntergeladenen `pom.xml` Datei.     
-
-Als Beispiel (wenn sich die `pom.xml` in THProjectX befinden würde): `cd D:\Info\THProjectX`
-
-2. Anschließend führen Sie in der Kommandozeile den Befehl `mvn clean install` aus um die Kotlin Datei über das Buildtool Maven zu kompilieren.
-
-3. Nun wird ein ein neuer Ordner "Target" erstellt worden sein, der die `.jar` Datei enthält.
-In dem vorliegendem Beispiel heißt diese Datei `THBingen-1.0-SNAPSHOT.jar`
-
-4. Begeben Sie sich in den "Target"-Ordner und geben folgenden Befehl ein:  `java -jar THBingen-1.0-SNAPSHOT-jar-with-dependencies.jar`
+`java -jar THBingen-1.0-SNAPSHOT-jar-with-dependencies.jar`
