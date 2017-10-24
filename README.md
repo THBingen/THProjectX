@@ -41,3 +41,9 @@ Der [Verhaltenskodex](CodeOfConduct) für Open-Source-Communities wird beachtet 
 
 Mergen: Auf dem Masterbranch nur nach Freigabe durch Betreuer Nicolai Parlog!
 
+## Ausführen der Applikation
+
+Laden Sie sich die Datei in "Release" herunter. Um die Anwendung zu starten öffnen Sie Ihr PowerShell und begeben sich in den Ordner, in dem die `jar-file` enthalten ist.
+Nun geben Sie folgenden Befehl ein:
+
+`java -jar THBingen-1.0-SNAPSHOT-jar-with-dependencies.jar`
