@@ -23,8 +23,8 @@ fun testScenarioWithInternList() {
     val testList: List<Trains> = listOf(Train1, Train2, Train3, Train4, Train5, Train6, Train7, Train8, Train9, Train10, Train11, Train12)
 
 }
-for (Trains in road.simulateScenario(testList)) {
-    println("Train '${TrainId}' is delayed: ${vehicle.delayed}")
+for (Trains in (testList)) {
+    println("Train '${TrainId}' is delayed: ${T}")
 
 
 

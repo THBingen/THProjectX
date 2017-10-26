@@ -7,9 +7,10 @@ import javax.swing.text.Segment
 import kotlin.collections.ArrayList
 
 
-class RailSegments (val SegmentId: MutableList<Int> = mutableListOf(1,2,3,4,5) )
+class RailSegments (var segments: RailSegments = 5)
 
-    var TrainCapacity : Int = 3
+var Segments : MutableList<Int> = mutableListOf(1,2,3,4,5)
+    var TrackCapacity : Int = 3
     var TrainOnSegment1 : Int = 0
     var TrainOnSegment2 : Int = 0
     var TrainOnSegment3 : Int = 0
@@ -18,31 +19,32 @@ class RailSegments (val SegmentId: MutableList<Int> = mutableListOf(1,2,3,4,5) )
 
 
 
-    fun announceSegmentCapacity (SegmentId: Int): Int {
-        for (SegmentId in RailSegments) {
+    fun announceSegmentCapacity (SegmentList: ):  List<SegmentId> {
+        segmentList =
+        for (Segments in SegmentId {
 
-           return TrainCapacity
+           return TrackCapacity
         }
 
-    return TrainCapacity
+    return TrackCapacity
     }
 
 
-fun denyPermission (TrainCapacity : Int): Boolean {
-        if (TrainCapacity == 0) {
+fun denyPermission (TrackCapacity : Int): Boolean {
+        if (TrainOnSegment1 <=3  ) {
             return true
         }
         return false
     }
 
-fun countTrainsOnSegments (TrainId : List<Trains> ){
+fun  countTrainsOnSegments (TrainId : List<Trains> ) : List<Int> {
 
 
     for(Trains in TrainId){
-        when (Trains.SegmentWish == 1)
+        if (Trains.SegmentWish == 1)
             TrainOnSegment1++
-        else
-            if (Trains.SegmentWish == 2) {
+
+        else if (Trains.SegmentWish == 2) {
                 TrainOnSegment2++
             }
 
@@ -59,11 +61,22 @@ fun countTrainsOnSegments (TrainId : List<Trains> ){
 
         }
 
-        return ArrayList(5,)
+        var SegmentCountList :  MutableList<Int> = mutableListOf(TrainOnSegment1,TrainOnSegment2,TrainOnSegment3,TrainOnSegment4,TrainOnSegment5)
+        return SegmentCountList
     }
 
-fun simulateRailTraffic(){
-    countTrainsOnSegments(SegmentWish = List<[SegmentWish: >)
+fun compareCountListWithTrackCapacity () {
+
+}
+
+
+fun simulateRailTraffic( TrainId : List<Trains>){
+    countTrainsOnSegments()
+    if (SegmentCountList  < TrackCapacity){{
+
+
+    }
+    }
 }
 
 

@@ -11,11 +11,11 @@ class RailNetwork (val SegmentAmount: MutableList<RailSegments>)
         for (Trains in Train) {
 
             for (SegmentId: Int) {
-                TrainCapacity = TrainCapacity - 1
-                return TrainCapacity
+                TrackCapacity = TrackCapacity - 1
+                return TrackCapacity
             }
 
-            return TrainCapacity
+            return TrackCapacity
         }
 
 
