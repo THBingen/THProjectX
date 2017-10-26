@@ -1,4 +1,4 @@
-import java.util.*
+import java.util.
 
 fun main (args: Array<String>) = Unit
 
@@ -6,7 +6,7 @@ fun main (args: Array<String>) = Unit
 
 
 fun testScenarioWithInternList() {
-    val road: RoadNetwork = RoadNetwork(capacity = 2)
+
     // Creation of sufficient cars for local testing without using CSV input for now
     val Train1: Trains = Trains(TrainId = 1, wannaDrive = true)
     val Train2: Trains = Trains(TrainId = 2, wannaDrive = true)

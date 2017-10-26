@@ -12,19 +12,16 @@ import java.lang.Math.random
 class Trains (val TrainId : Int, val SeqmentWish : Int)
 
     var drivePermission : Boolean = true
-
-    fun PermissiongetCanceled() {
+    var announcedSeqment : Int = 0
+fun PermissiongetCanceled() {
         this.drivePermission = false
     }
 
 
     fun announceSeqment(){
-        for () {
+        var announcedSeqment
 
-
-        }
-
-        return announcedSeqment()
+        return announcedSeqment
     }
 
 
