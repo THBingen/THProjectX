@@ -1,5 +1,6 @@
 
 import java.lang.Math.random
+import kotlin.reflect.KProperty
 
 
 // Hätte jedem Zug eine Id gegeben und diese dann in der späteren scenario Funktion abrufen lassen.
@@ -9,20 +10,24 @@ import java.lang.Math.random
 
 
 
-class Trains (val TrainId : Int, val SeqmentWish : Int)
+class Trains (var TrainId :Int, var SegmentWish : Int)
 
     var drivePermission : Boolean = true
-    var announcedSeqment : Int = 0
-fun PermissiongetCanceled() {
-        this.drivePermission = false
+    //var announcedSegment : Int = 0
+
+
+    fun PermissiongetCanceled() {
+        drivePermission = false
     }
 
 
-    fun announceSeqment(){
-        var announcedSeqment
+   /* fun announceSegment() {
+        var announcedSegment
 
-        return announcedSeqment
-    }
+        announcedSegment  =
+
+        return announcedSegment
+    }*/
 
 
 
