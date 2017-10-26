@@ -7,7 +7,7 @@ fun main (args: Array<String>) = Unit
 
 fun testScenarioWithInternList() {
 
-    // Creation of sufficient cars for local testing without using CSV input for now
+    
     val Train1: Trains = Trains(TrainId = 1, wannaDrive = true)
     val Train2: Trains = Trains(TrainId = 2, wannaDrive = true)
     val Train3: Trains = Trains(TrainId = 3, wannaDrive = true)
