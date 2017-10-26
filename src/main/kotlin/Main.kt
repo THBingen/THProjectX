@@ -1,11 +1,7 @@
 
-fun main (args: Array<String>) {
+fun main (args: Array<String>) = Unit
 
 
-<<<<<<< HEAD
-}
-=======
-}
 
 
 fun testScenarioWithInternList() {
@@ -25,5 +21,6 @@ fun testScenarioWithInternList() {
     val Train12: Trains = Trains(TrainId = 12, wannaDrive = true)
 
 
-    val testList: List<Vehicle> = listOf(Train1, Train2, Train3, Train4, Train5, Train6, Train7, Train8, Train9, Train10, Train11, Train12)
->>>>>>> af74c89ab3b90fa9a6ae600e5a98716dd9484d63
+    val testList: List<Trains> = listOf(Train1, Train2, Train3, Train4, Train5, Train6, Train7, Train8, Train9, Train10, Train11, Train12)
+
+}
