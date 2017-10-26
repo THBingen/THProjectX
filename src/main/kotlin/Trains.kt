@@ -9,19 +9,24 @@ import java.lang.Math.random
 
 
 
-class Trains (val TrainId: MutableList<Int> = MutableList(12, 1), val WantsToDrive: MutableList){
+class Trains (val TrainId : Int, val SeqmentWish : Int)
 
-    var delayed: Boolean = false
-    var status : Boolean  = random()
+    var drivePermission : Boolean = true
 
-
-    fun gettingDeleyed() {
-        this.delayed = true
+    fun PermissiongetCanceled() {
+        this.drivePermission = false
     }
 
 
+    fun announceSeqment(){
+        for () {
 
-}
+
+        }
+
+        return announcedSeqment()
+    }
+
 
 
 

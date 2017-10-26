@@ -4,20 +4,28 @@
 
 import java.util.^
 
-class RailSegments (val SegmentId: MutableList<1...5> = mutablelistof (Int), val TrainCapacity : Int = 3)
+class RailSegments (val SegmentId : MutableList <1...5> = Mutablelistof (Int) )
+
+    var TrainCapacity : Int = 3
 
     fun announceCapacity(Trains: List<Trains>): Int {
         var capacityDemand: Int = 0
 
-        for (train in Trains) {
-            if (train.wannaDrive)
-                capacityDemand = capacityDemand + 1
-        }
-        return capacityDemand
+    return TrainCapacity
     }
 
 
-    fun checkForTrafficJam(demand: Int): Boolean {
+
+
+        for (train in Trains) {
+            if (trains.)
+                TrainCapacity = TrainCapacity - 1
+        }
+        return TrainCapacity
+    }
+
+
+    fun denyPermission (TrainCa): Boolean {
         if (capacity < demand) {
             return true
         }
