@@ -1,6 +1,9 @@
 package rail_simulation
 
 import java.util.* //Strg B zum Aufruf
+import com.univocity.parsers.common.record.Record
+import com.univocity.parsers.csv.CsvParser
+import com.univocity.parsers.csv.CsvParserSettings
 
 fun main(args: Array<String>) {
 
@@ -38,18 +41,37 @@ fun scenario() {
     }
 }
 
-fun external() {
-    val trains = mutableListOf<Train>()
+fun external(fileName: String): MutableList<Train> {
+    val trainsOnCSV = mutableListOf<Train>()
     val numberOfSegments = 5
 
+// Einrichten des Parsers
+    val settings = CsvParserSettings()
+    settings.format.setLineSeparator("\n")
+    settings.isHeaderExtractionEnabled = true
 
-// CSV Dateien einlesen für TrainId und Segments -> fehlt hier noch
-// Liste aus Trains muss gebaut werden
+    val csvParser = CsvParser(settings)
+
+    val reader = FileAccess().getReader("/" + fileName)
+
+    val allRows: MutableList<Record> = csvParser.parseAllRecords(reader)
+
+    // Abänderung der Input Werte von "String" zu 'Int' zur Weiterbearbeitung
+    for (record in allRows) {
+        val trainId_String: String = record.values[0]
+        val numberOfSegments_String: String = record.values[1]
+
+        val trainId_Int: Int = trainId_String.toInt()
+        val numberOfSegments_Int: Int = numberOfSegments_String.toInt()
+
+        trainsOnCSV.add(Train(trainId = trainId_Int, segmentIndex = numberOfSegments_Int))
+    }
+
     val railNetwork = RailNetwork(numberOfSegments)
 
-    railNetwork.runSimulation(trains)
+    railNetwork.runSimulation(trainsOnCSV)
 
-    for (train in trains) {
+    for (train in trainsOnCSV) {
         val delayMessage: String = if (train.delayed) {
             "is delayed"
         } else {
@@ -58,4 +80,5 @@ fun external() {
 
         println("Train ${train.trainId} wants to drive on Segment ${train.segmentIndex + 1} and  ${delayMessage}")
     }
+    return trainsOnCSV
 }
