@@ -1,14 +1,21 @@
 package rail_simulation
 
-import java.util.* //Strg B zum Aufruf
 import com.univocity.parsers.common.record.Record
 import com.univocity.parsers.csv.CsvParser
 import com.univocity.parsers.csv.CsvParserSettings
+import com.univocity.parsers.csv.CsvWriter
+import com.univocity.parsers.csv.CsvWriterSettings
+import java.util.*
 
 fun main(args: Array<String>) {
 
     scenario()
 
+    
+    external(fileName = "TrainSchedule.csv")
+
+
+    simulateCSV()
 
 }
 
@@ -81,4 +88,36 @@ fun external(fileName: String): MutableList<Train> {
         println("Train ${train.trainId} wants to drive on Segment ${train.segmentIndex + 1} and  ${delayMessage}")
     }
     return trainsOnCSV
+}
+
+// printResultsToCSV geht den anderen Weg herum: Übergabe von 'Int' zu 'String'
+fun printResultsToCSV(results: List<Train>, outputFile: String = "TrainScheduleResults.csv") {
+
+
+    val writer = FileAccess().getWriter(outputFile)
+
+    val csvWriter = CsvWriter(writer, CsvWriterSettings())
+
+
+    val trainRows: MutableList<Array<Any>> = mutableListOf()
+    val id = "TrainID"
+    val delay = "Delayed"
+    val row: Array<Any> = arrayOf(id, delay)
+    trainRows.add(row)
+
+    for (result in results) {
+        val id = result.trainId.toString()
+        val delay = result.delayed.toString()
+        val row: Array<Any> = arrayOf(id, delay)
+        trainRows.add(row)
+    }
+    csvWriter.writeRowsAndClose(trainRows)
+}
+
+
+fun simulateCSV() {
+
+    val trainsFromCSV: List<Train> = external(fileName = "TrainSchedule.csv")
+
+    printResultsToCSV(results = trainsFromCSV, outputFile = "TrainScheduleResults.csv")
 }
