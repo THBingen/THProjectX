@@ -48,6 +48,6 @@ CSV:Die Notierung der gewünschen Segmente fängt bei 0 an (statt wie gewohnt be
 Laden Sie sich die Datei in "Release" herunter. Um die Anwendung zu starten öffnen Sie Ihr PowerShell und begeben sich in den Ordner, in dem die `jar-file` enthalten ist.
 Nun geben Sie folgenden Befehl ein:
 
-`java -jar THBingen-2.0-SNAPSHOT-jar-with-dependencies.jar`
+`java -jar THBingen-2.0-jar-with-dependencies.jar`
 
 Mit Release 2.0 wird eine simple Kapazitätssimulation erstellt. Das Programm ließt einen Fahrplan, als .csv Datei ein. Aus der Importdatei werden die "Zug-ID" und das gewünsche Segment ausgelesen. Das Zugnetzwerk besteht aus 5 Segmenten, die wiedrum je einer Kapazität für 3 Züge haben. Überschreitet die Anzahl der Zuganfragen die verfügbare Kapazität eines der einzelnen Segmete, entsteht ein Stau. Alle Züge mit identischem Segment und einer Kapazitätsüberschreitung, verspäten sich. Die Ergebnisse der Kapazitätsübeprfung werden in einer Output-Datei im .csv Format ausgegeben.   
