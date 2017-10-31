@@ -11,7 +11,7 @@ fun main(args: Array<String>) {
 
     scenario()
 
-    
+
     external(fileName = "TrainSchedule.csv")
 
 
@@ -33,7 +33,7 @@ fun scenario() {
     }
 
 
-    val railNetwork = RailNetwork(numberOfSegments)
+    val railNetwork = RailNetwork(numberOfSegments, trainCapacity = 3)
 
     railNetwork.runSimulation(trains)
 
@@ -50,12 +50,13 @@ fun scenario() {
 
 fun external(fileName: String): MutableList<Train> {
     val trainsOnCSV = mutableListOf<Train>()
-    val numberOfSegments = 5
+    var numberOfSegments = 0
+    var trainCapacity = 0
 
 // Einrichten des Parsers
     val settings = CsvParserSettings()
     settings.format.setLineSeparator("\n")
-    settings.isHeaderExtractionEnabled = true
+    settings.isHeaderExtractionEnabled = false
 
     val csvParser = CsvParser(settings)
 
@@ -63,18 +64,34 @@ fun external(fileName: String): MutableList<Train> {
 
     val allRows: MutableList<Record> = csvParser.parseAllRecords(reader)
 
-    // Abänderung der Input Werte von "String" zu 'Int' zur Weiterbearbeitung
+    // lesen der Werte aus der CSV für jede Zeile
     for (record in allRows) {
-        val trainId_String: String = record.values[0]
-        val numberOfSegments_String: String = record.values[1]
+        // train_Id und numberOfSegments wurden ersetzt durch column
+        // sinnvollere Benennung da wir nur noch eine Zeile mehr in unserer CSV nehmen; Segment Anzahl und die Kapazität
+        val column1_String: String = record.values[0]
+        val column2_String: String = record.values[1]
 
-        val trainId_Int: Int = trainId_String.toInt()
-        val numberOfSegments_Int: Int = numberOfSegments_String.toInt()
+        // Wenn die Anzahl der Segmente 0 ist, dann wandle mir den Wert aus der jeweiligen Spalte zu einem Int
+        if (numberOfSegments == 0) {
 
-        trainsOnCSV.add(Train(trainId = trainId_Int, segmentIndex = numberOfSegments_Int))
+            numberOfSegments = column1_String.toInt()
+
+            trainCapacity = column2_String.toInt()
+
+            //dient nur zum Test ob er auch die richtigen zeilen liest
+            println("number of segments: $numberOfSegments, train capacity: $trainCapacity")
+
+        } else {
+
+            val trainId_Int: Int = column1_String.toInt()
+            val segmentForTrain_Int: Int = column2_String.toInt()
+
+            trainsOnCSV.add(Train(trainId = trainId_Int, segmentIndex = segmentForTrain_Int))
+        }
+
     }
 
-    val railNetwork = RailNetwork(numberOfSegments)
+    val railNetwork = RailNetwork(numberOfSegments, trainCapacity)
 
     railNetwork.runSimulation(trainsOnCSV)
 
