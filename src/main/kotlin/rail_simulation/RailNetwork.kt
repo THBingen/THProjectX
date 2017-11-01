@@ -8,6 +8,9 @@ class RailNetwork(val numberOfSegments: Int, val trainCapacity: Int) {
     //segments ist eine Liste aus 5 Segmenten mit je einer trainCapacity von max. 3 (aufgerufen durch die Klasse RailSegment)
     val segments = List(numberOfSegments, { RailSegment(trainCapacity) })
 
+    val totalCapacity = numberOfSegments * trainCapacity
+
+
     fun runSimulation(trains: List<Train>) {
 
         for (train in trains) {
@@ -19,6 +22,16 @@ class RailNetwork(val numberOfSegments: Int, val trainCapacity: Int) {
         for (segment in segments) {
             segment.checkCapacity()
         }
+    }
+
+    fun remainingCapacity(): Int {
+        var remainingCapacityTotal = 0
+        for (segment in segments) {
+            remainingCapacityTotal = segment.remainingCapacity() + remainingCapacityTotal
+
+
+        }
+        return remainingCapacityTotal
     }
 
 
