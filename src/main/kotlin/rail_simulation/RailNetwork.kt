@@ -4,9 +4,9 @@ package rail_simulation
 //Liste ist eine Reihenfolge von Elementen
 
 
-class RailNetwork(val numberOfSegments: Int) {
+class RailNetwork(val numberOfSegments: Int, val trainCapacity: Int) {
     //segments ist eine Liste aus 5 Segmenten mit je einer trainCapacity von max. 3 (aufgerufen durch die Klasse RailSegment)
-    val segments = List(numberOfSegments, { RailSegment(3) })
+    val segments = List(numberOfSegments, { RailSegment(trainCapacity) })
 
     fun runSimulation(trains: List<Train>) {
 

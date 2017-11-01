@@ -1,4 +1,6 @@
-TrainId, Segment
+#NumberOfSegments, CapacityperSegment
+5,3
+#TrainId, Segment
 1,2
 2,4
 3,2
