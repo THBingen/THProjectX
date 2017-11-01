@@ -10,10 +10,7 @@ import java.util.*
 fun main(args: Array<String>) {
 
     scenario()
-
-
-    external(fileName = "TrainSchedule.csv")
-
+    
 
     simulateCSV()
 
