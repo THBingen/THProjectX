@@ -10,9 +10,8 @@ import java.util.*
 fun main(args: Array<String>) {
 
     scenario()
-    
 
-    simulateCSV()
+    external(fileName = "TrainSchedule.csv")
 
 }
 
@@ -20,6 +19,7 @@ fun scenario() {
     val random = Random()
     val trains = mutableListOf<Train>()
     val numberOfSegments = 5
+
     for (trainId in 1..12) {
         //erspart mir jeden Train einzeln aufzuschreiben
 
@@ -42,10 +42,15 @@ fun scenario() {
         }
 
         println("Train ${train.trainId} wants to drive on Segment ${train.segmentIndex + 1} and  ${delayMessage}")
+
     }
+    println()
+    println("The total train capacity of the network is ${railNetwork.totalCapacity}")
+    println()
+    println("The remaining capacity of the network is ${railNetwork.remainingCapacity()}")
 }
 
-fun external(fileName: String): MutableList<Train> {
+fun external(fileName: String) {
     val trainsOnCSV = mutableListOf<Train>()
     var numberOfSegments = 0
     var trainCapacity = 0
@@ -92,20 +97,11 @@ fun external(fileName: String): MutableList<Train> {
 
     railNetwork.runSimulation(trainsOnCSV)
 
-    for (train in trainsOnCSV) {
-        val delayMessage: String = if (train.delayed) {
-            "is delayed"
-        } else {
-            "is on time"
-        }
-
-        println("Train ${train.trainId} wants to drive on Segment ${train.segmentIndex + 1} and  ${delayMessage}")
-    }
-    return trainsOnCSV
+    printResultsToCSV(results = trainsOnCSV, railNetwork = railNetwork, outputFile = "TrainScheduleResults.csv")
 }
 
 // printResultsToCSV geht den anderen Weg herum: Übergabe von 'Int' zu 'String'
-fun printResultsToCSV(results: List<Train>, outputFile: String = "TrainScheduleResults.csv") {
+fun printResultsToCSV(results: List<Train>, railNetwork: RailNetwork, outputFile: String = "TrainScheduleResults.csv") {
 
 
     val writer = FileAccess().getWriter(outputFile)
@@ -114,6 +110,17 @@ fun printResultsToCSV(results: List<Train>, outputFile: String = "TrainScheduleR
 
 
     val trainRows: MutableList<Array<Any>> = mutableListOf()
+
+    val totalCapacity = "TotalCapacity"
+    val remainingCapacity = "RemainingCapacity"
+    val capacityRow: Array<Any> = arrayOf(totalCapacity, remainingCapacity)
+    trainRows.add(capacityRow)
+
+    val totalCapacityValue = railNetwork.totalCapacity
+    val remainingCapacityValue = railNetwork.remainingCapacity()
+    val capacityValuesRow: Array<Any> = arrayOf(totalCapacityValue, remainingCapacityValue)
+    trainRows.add(capacityValuesRow)
+
     val id = "TrainID"
     val delay = "Delayed"
     val row: Array<Any> = arrayOf(id, delay)
@@ -129,9 +136,3 @@ fun printResultsToCSV(results: List<Train>, outputFile: String = "TrainScheduleR
 }
 
 
-fun simulateCSV() {
-
-    val trainsFromCSV: List<Train> = external(fileName = "TrainSchedule.csv")
-
-    printResultsToCSV(results = trainsFromCSV, outputFile = "TrainScheduleResults.csv")
-}
