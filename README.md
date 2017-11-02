@@ -62,7 +62,7 @@ Auf dem Masterbranch befinden sich alle Programmfortschritte inklusive folgender
 
 2. Kapazität der Segmente ist konfigurierbar.
 
-3. Es verspäten sich nur so viele Züge, wie die Kapazität eines Segments überschreiten. Alle anderen Züge haben freie Fahrt. Die Auswahl welche Züge sich verspäten wird jedoch nicht randomisiert. 
+3. Es verspäten sich nur die Züge, welche die Kapazität eines Segments überschreiten. Alle anderen Züge haben freie Fahrt. Die Auswahl welche Züge sich verspäten wird jedoch nicht randomisiert. 
 
 4. Aufgrund missverstandener Aufgabenstellung wird nicht die segmentspezifische Gesamtkapazität sowie die verbleibende Kapazität pro Segment ausgegeben, sondern es wird im Code die Gesamtkapazität des Netzwerks (total capacity) sowie die verbleibende Kapazität aller Segmente ausgegeben.
 
