@@ -54,7 +54,7 @@ Mit Release 2.1 wird eine simple Kapazitätssimulation erstellt. Das Programm li
 
 ## Projektabschluss - Dokumentation Fortschritt Milestone 3 "Extend Simulation By Making It More Configurable"
 
-Abgeschlossene Releases:2 
+Abgeschlossene Releases: 2 
 Auf dem Masterbranch befinden sich alle Programmfortschritte inklusive folgender gelöster Problemstellungen von Milestone 3: 
 
 1. Die Anzahl der Segmente ist konfigurierbar. 
